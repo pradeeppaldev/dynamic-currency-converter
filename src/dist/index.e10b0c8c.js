@@ -2969,7 +2969,7 @@ function App() {
         fetch(`https://v6.exchangerate-api.com/v6/580e2decb3db56b53f3091e9/latest/USD`).then((response)=>response.json()).then((data)=>{
             setData(data);
             console.log(data);
-        });
+        }).catch((error)=>console.log(error));
     }, []);
     const currencyUnitKey = Object.keys(data.conversion_rates);
     function Convert() {
@@ -2981,168 +2981,166 @@ function App() {
             setAns(result);
         }
     }
-    return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _jsxDevRuntime.Fragment), {
-        children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-            className: "container",
-            children: [
-                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-                    className: "header",
-                    children: [
-                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("img", {
-                            src: (0, _currencyConversionPngDefault.default),
-                            alt: "currency-img"
-                        }, void 0, false, {
-                            fileName: "src/script.js",
-                            lineNumber: 38,
-                            columnNumber: 21
-                        }, this),
-                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h1", {
-                            children: "Currency Converter"
-                        }, void 0, false, {
-                            fileName: "src/script.js",
-                            lineNumber: 39,
-                            columnNumber: 21
-                        }, this)
-                    ]
-                }, void 0, true, {
-                    fileName: "src/script.js",
-                    lineNumber: 37,
-                    columnNumber: 17
-                }, this),
-                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-                    className: "input-section",
-                    children: [
-                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-                            className: "input-box",
-                            children: [
-                                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("label", {
-                                    children: "Amount"
-                                }, void 0, false, {
-                                    fileName: "src/script.js",
-                                    lineNumber: 43,
-                                    columnNumber: 25
-                                }, this),
-                                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("input", {
-                                    type: "number",
-                                    value: amount,
-                                    onChange: (e)=>setAmount(e.target.value),
-                                    placeholder: "Enter Amount"
-                                }, void 0, false, {
-                                    fileName: "src/script.js",
-                                    lineNumber: 44,
-                                    columnNumber: 25
-                                }, this)
-                            ]
-                        }, void 0, true, {
-                            fileName: "src/script.js",
-                            lineNumber: 42,
-                            columnNumber: 21
-                        }, this),
-                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-                            className: "input-box",
-                            children: [
-                                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("label", {
-                                    children: "From Currency"
-                                }, void 0, false, {
-                                    fileName: "src/script.js",
-                                    lineNumber: 52,
-                                    columnNumber: 25
-                                }, this),
-                                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("select", {
-                                    onChange: (e)=>setFromC(e.target.value),
-                                    children: currencyUnitKey.map((currencyUnit1)=>/*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("option", {
-                                            value: currencyUnit1,
-                                            children: currencyUnit1
-                                        }, currencyUnit1, false, {
-                                            fileName: "src/script.js",
-                                            lineNumber: 55,
-                                            columnNumber: 33
-                                        }, this))
-                                }, void 0, false, {
-                                    fileName: "src/script.js",
-                                    lineNumber: 53,
-                                    columnNumber: 25
-                                }, this)
-                            ]
-                        }, void 0, true, {
-                            fileName: "src/script.js",
-                            lineNumber: 51,
-                            columnNumber: 21
-                        }, this),
-                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-                            className: "input-box",
-                            children: [
-                                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("label", {
-                                    children: "To Currency"
-                                }, void 0, false, {
-                                    fileName: "src/script.js",
-                                    lineNumber: 62,
-                                    columnNumber: 25
-                                }, this),
-                                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("select", {
-                                    onChange: (e)=>setToC(e.target.value),
-                                    children: currencyUnitKey.map((currencyUnit2)=>/*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("option", {
-                                            value: currencyUnit2,
-                                            children: currencyUnit2
-                                        }, currencyUnit2, false, {
-                                            fileName: "src/script.js",
-                                            lineNumber: 65,
-                                            columnNumber: 33
-                                        }, this))
-                                }, void 0, false, {
-                                    fileName: "src/script.js",
-                                    lineNumber: 63,
-                                    columnNumber: 25
-                                }, this)
-                            ]
-                        }, void 0, true, {
-                            fileName: "src/script.js",
-                            lineNumber: 61,
-                            columnNumber: 21
-                        }, this)
-                    ]
-                }, void 0, true, {
-                    fileName: "src/script.js",
-                    lineNumber: 41,
-                    columnNumber: 17
-                }, this),
-                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("button", {
-                    onClick: Convert,
-                    children: "Convert"
-                }, void 0, false, {
-                    fileName: "src/script.js",
-                    lineNumber: 72,
-                    columnNumber: 17
-                }, this),
-                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-                    children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h2", {
+    return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+        className: "container",
+        children: [
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                className: "header",
+                children: [
+                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("img", {
+                        src: (0, _currencyConversionPngDefault.default),
+                        alt: "currency-img"
+                    }, void 0, false, {
+                        fileName: "src/script.js",
+                        lineNumber: 38,
+                        columnNumber: 21
+                    }, this),
+                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h1", {
+                        children: "Currency Converter"
+                    }, void 0, false, {
+                        fileName: "src/script.js",
+                        lineNumber: 39,
+                        columnNumber: 21
+                    }, this)
+                ]
+            }, void 0, true, {
+                fileName: "src/script.js",
+                lineNumber: 37,
+                columnNumber: 17
+            }, this),
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                className: "input-section",
+                children: [
+                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                        className: "input-box",
                         children: [
-                            "Converted Amount: ",
-                            ans.toFixed(2)
+                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("label", {
+                                children: "Amount"
+                            }, void 0, false, {
+                                fileName: "src/script.js",
+                                lineNumber: 43,
+                                columnNumber: 25
+                            }, this),
+                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("input", {
+                                type: "number",
+                                value: amount,
+                                onChange: (e)=>setAmount(e.target.value),
+                                placeholder: "Enter Amount"
+                            }, void 0, false, {
+                                fileName: "src/script.js",
+                                lineNumber: 44,
+                                columnNumber: 25
+                            }, this)
                         ]
                     }, void 0, true, {
                         fileName: "src/script.js",
-                        lineNumber: 74,
+                        lineNumber: 42,
+                        columnNumber: 21
+                    }, this),
+                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                        className: "input-box",
+                        children: [
+                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("label", {
+                                children: "From Currency"
+                            }, void 0, false, {
+                                fileName: "src/script.js",
+                                lineNumber: 52,
+                                columnNumber: 25
+                            }, this),
+                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("select", {
+                                onChange: (e)=>setFromC(e.target.value),
+                                children: currencyUnitKey.map((currencyUnit1)=>/*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("option", {
+                                        value: currencyUnit1,
+                                        children: currencyUnit1
+                                    }, currencyUnit1, false, {
+                                        fileName: "src/script.js",
+                                        lineNumber: 55,
+                                        columnNumber: 33
+                                    }, this))
+                            }, void 0, false, {
+                                fileName: "src/script.js",
+                                lineNumber: 53,
+                                columnNumber: 25
+                            }, this)
+                        ]
+                    }, void 0, true, {
+                        fileName: "src/script.js",
+                        lineNumber: 51,
+                        columnNumber: 21
+                    }, this),
+                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                        className: "input-box",
+                        children: [
+                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("label", {
+                                children: "To Currency"
+                            }, void 0, false, {
+                                fileName: "src/script.js",
+                                lineNumber: 62,
+                                columnNumber: 25
+                            }, this),
+                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("select", {
+                                onChange: (e)=>setToC(e.target.value),
+                                children: currencyUnitKey.map((currencyUnit2)=>/*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("option", {
+                                        value: currencyUnit2,
+                                        children: currencyUnit2
+                                    }, currencyUnit2, false, {
+                                        fileName: "src/script.js",
+                                        lineNumber: 65,
+                                        columnNumber: 33
+                                    }, this))
+                            }, void 0, false, {
+                                fileName: "src/script.js",
+                                lineNumber: 63,
+                                columnNumber: 25
+                            }, this)
+                        ]
+                    }, void 0, true, {
+                        fileName: "src/script.js",
+                        lineNumber: 61,
                         columnNumber: 21
                     }, this)
-                }, void 0, false, {
+                ]
+            }, void 0, true, {
+                fileName: "src/script.js",
+                lineNumber: 41,
+                columnNumber: 17
+            }, this),
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("button", {
+                onClick: Convert,
+                children: "Convert"
+            }, void 0, false, {
+                fileName: "src/script.js",
+                lineNumber: 72,
+                columnNumber: 17
+            }, this),
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h2", {
+                    children: [
+                        "Converted Amount: ",
+                        ans.toFixed(2)
+                    ]
+                }, void 0, true, {
                     fileName: "src/script.js",
-                    lineNumber: 73,
-                    columnNumber: 17
+                    lineNumber: 74,
+                    columnNumber: 21
                 }, this)
-            ]
-        }, void 0, true, {
-            fileName: "src/script.js",
-            lineNumber: 36,
-            columnNumber: 13
-        }, this)
-    }, void 0, false);
+            }, void 0, false, {
+                fileName: "src/script.js",
+                lineNumber: 73,
+                columnNumber: 17
+            }, this)
+        ]
+    }, void 0, true, {
+        fileName: "src/script.js",
+        lineNumber: 36,
+        columnNumber: 13
+    }, this);
 }
 _s(App, "qdfEnXB/5jP+4n7k/+DrdN8mUso=");
 _c = App;
 (0, _clientDefault.default).createRoot(document.getElementById('root')).render(/*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)(App, {}, void 0, false, {
     fileName: "src/script.js",
-    lineNumber: 81,
+    lineNumber: 80,
     columnNumber: 61
 }, undefined));
 var _c;

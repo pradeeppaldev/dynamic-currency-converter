@@ -16,7 +16,8 @@ function App() {
             .then(data => {
                 setData(data);
                 console.log(data);
-            });
+            })
+            .catch((error) => (console.log(error)));
     }, []);
 
     const currencyUnitKey = Object.keys(data.conversion_rates);
@@ -32,7 +33,6 @@ function App() {
     }
 
     return (
-        <>
             <div className="container">
                 <div className="header">
                     <img src={img1} alt="currency-img" />
@@ -74,7 +74,6 @@ function App() {
                     <h2>Converted Amount: {ans.toFixed(2)}</h2>
                 </div>
             </div>
-        </>
     );
 }
 
